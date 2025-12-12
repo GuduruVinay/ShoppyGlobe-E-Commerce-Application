@@ -1,11 +1,11 @@
-import Header from "./components/Header";
+import { RouterProvider } from "react-router-dom";
+import router from "./router";
 
 function App() {
   return (
-    <div>
-      <Header />
-    </div>
-  )
+    // RouterProvider makes the routing available to the whole application
+    <RouterProvider router={router} />
+  );
 }
 
 export default App;
