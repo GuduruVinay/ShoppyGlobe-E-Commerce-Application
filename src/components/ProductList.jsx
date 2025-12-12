@@ -1,10 +1,14 @@
 import useFetchProducts from "../hooks/useFetchProducts";
 import ProductItem from "./ProductItem";
+import { useSelector } from "react-redux";
 
 const API_URL = 'https://dummyjson.com/products';
 
 function ProductList() {
-    const { data: products, loading, error } = useFetchProducts(API_URL);
+    const { data: allProducts, loading, error } = useFetchProducts(API_URL);
+
+    // Get the search term from Redux state
+    const searchTerm = useSelector((state) => state.search.searchTerm);
 
     // Display Loading State
     if(loading) {
@@ -32,16 +36,23 @@ function ProductList() {
         )
     }
 
+    // Filtering Logic
+    const filteredProducts = allProducts.filter((product) => product.title.toLowerCase().includes(searchTerm.toLowerCase()));
+    
     // Rendering the List
     return (
         <div>
-            <h2>Featured Products</h2>
-            <div>
-                {products.map((product) => (
-                    // use unique key and pass product data via props
-                    <ProductItem key={product.id} product={product} />
-                ))}
-            </div>
+            <h2>{searchTerm ? `Results for "${searchTerm}"` : 'Featured Products'}</h2>
+            {filteredProducts.length === 0 && searchTerm ? (
+                <p>No products matched your search criteria.</p>
+            ) : (
+                <div>
+                    {filteredProducts.map((product) => (
+                        // use unique key and pass product data via props
+                        <ProductItem key={product.id} product={product} />
+                    ))}
+                </div>
+            )}
         </div>
     );
 };
