@@ -5,14 +5,14 @@ function NotFound() {
     const error = useRouteError();
 
     return (
-        <div>
+        <div className="not-found-page">
             <h2>404 - Page Not Found</h2>
             <p>Sorry, the page you were looking for does not exist.</p>
             {/* Display proper error details on the UI */}
             {error && (
                 <div>
                     <p>
-                        **Error Detail:** *{error.statusText || error.message}*
+                        **Error Detail :** *{error.statusText || error.message}*
                     </p>
                 </div>
             )}

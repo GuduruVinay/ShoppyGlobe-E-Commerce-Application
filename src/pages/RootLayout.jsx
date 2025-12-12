@@ -5,7 +5,7 @@ function RootLayout() {
     return (
         <>
             <Header />
-            <main>
+            <main className="container">
                 {/* The Outlet renders the component for the current route (e.g., Home, Cart)*/}
                 <Outlet />
             </main>

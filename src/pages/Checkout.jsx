@@ -39,7 +39,7 @@ function Checkout() {
     if(cartItems.length === 0) {
         if(orderPlaced) {
             return (
-                <div>
+                <div className="checkout-success">
                     <h2>Order Placed Successfully!</h2>
                     <p>Thank you for your purchase.</p>
                     <p>Redirecting you to the home page...</p>
@@ -48,7 +48,7 @@ function Checkout() {
         }
 
         return (
-            <div>
+            <div className="checkout-empty">
                 <h2>Cannot Checkout</h2>
                 <p>Your cart is empty. <Link to="/">Start Shopping</Link></p>
             </div>
@@ -56,32 +56,32 @@ function Checkout() {
     }
     
     return (
-        <div>
+        <div className="checkout-page">
             <h2>Checkout</h2>
-            <div>
+            <div className="checkout-grid">
                 {/* Dummy Form (User Details) */}
-                <div>
+                <div className="checkout-form-container">
                     <h3>1. Shipping Information</h3>
                     <form onSubmit={handlePlaceOrder}>
                         <input name="name" type="text" placeholder="Full Name" value={formData.name} onChange={handleChange} required />
                         <input name="email" type="email" placeholder="Email" value={formData.email} onChange={handleChange} required />
                         <textarea name="address" placeholder="Shipping Address" value={formData.address} onChange={handleChange} required />
-                        <button type="submit">
+                        <button type="submit" className="place-order-btn">
                             Place Order (${subtotal.toFixed(2)})
                         </button>
                     </form>
                 </div>
                 {/* Order Summary */}
-                <div>
+                <div className="checkout-summary-container">
                     <h3>2. Order Summary</h3>
                     {cartItems.map((item) => (
-                        <div key={item.id}>
+                        <div key={item.id} className="summary-item">
                             <p>{item.title} x {item.quantity}</p>
                             <p>${(item.price * item.quantity).toFixed(2)}</p>
                         </div>
                     ))}
                     <hr />
-                    <div>
+                    <div className="summary-totals">
                         <p>Subtotal : <span>${subtotal.toFixed(2)}</span></p>
                         <p>Shipping : <span>FREE</span></p>
                         <p>Total : <span>${subtotal.toFixed(2)}</span></p>

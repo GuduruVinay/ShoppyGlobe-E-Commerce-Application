@@ -3,14 +3,14 @@ import { createBrowserRouter } from "react-router-dom";
 import RootLayout from "../pages/RootLayout";
 import NotFound from '../pages/NotFound';
 
-// Convert page imports to use React.lazy
+// Lazy-loaded components
 const Home = lazy(() => import('../pages/Home'));
 const ProductDetail = lazy(() => import('../pages/ProductDetail'));
 const Cart = lazy(() => import('../pages/Cart'));
 const Checkout = lazy(() => import('../pages/Checkout'));
 
 // Fallback component while the chunk is loading
-const LoadingFallback = () => <div>Loading page content...</div>;
+const LoadingFallback = () => <div className="page-loading-fallback">Loading page content...</div>;
 
 // Define the router configuration
 const router = createBrowserRouter([
@@ -60,6 +60,7 @@ const router = createBrowserRouter([
     // Catch all route for paths not matched by the main layout
     {
         path: '*',
+        // 404 Route
         element: <NotFound />,
     },
 ]);

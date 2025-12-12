@@ -24,8 +24,7 @@ const useFetchProducts = (url) => {
 
                 const result = await response.json();
 
-                // The DummyJSON API returns products under the 'products' key for the list endpoint
-                // For the product list, we set data to result.products. For a single detail fetch, it's just result.
+                // Handle list endpoint (result.products) vs detail endpoint (result)
                 setData(result.products || result);
             } catch(err) {
                 if(err.name === 'AbortError') {
@@ -35,7 +34,6 @@ const useFetchProducts = (url) => {
                 setError(err.message);
             } finally {
                 setLoading(false);
-
             }
         };
 

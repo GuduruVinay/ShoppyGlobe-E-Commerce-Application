@@ -1,6 +1,8 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import App from './App.jsx';
+// Global Stylesheet Import
+import "./index.css"
 
 // Redux imports
 import { Provider } from 'react-redux';

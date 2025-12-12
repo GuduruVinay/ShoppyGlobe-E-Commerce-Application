@@ -1,5 +1,5 @@
-import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
 import { setSearchTerm } from "../redux/searchSlice";
 
 function Header() {
@@ -16,13 +16,13 @@ function Header() {
     };
 
     return (
-        <header>
-            <nav>
+        <header className="app-header">
+            <nav className="header-nav">
                 {/* Link to Home */}
                 <Link to="/">
-                    <h1>ShoppyGlobe</h1>
+                    <h1 className="logo">ShoppyGlobe</h1>
                 </Link>
-                <div>
+                <div className="search-bar">
                     <input 
                         type="text"
                         placeholder="Search products..."
@@ -30,12 +30,13 @@ function Header() {
                         onChange={handleSearchChange}
                     />
                 </div>
-                <ul>
+                <ul className="nav-links">
                     <li>
                         <Link to="/">Home</Link>
                     </li>
                     <li>
-                        <Link to="/cart">
+                        {/* Link to Cart with dynamic count */}
+                        <Link to="/cart" className="cart-link">
                             Cart ({totalItems})
                         </Link>
                     </li>

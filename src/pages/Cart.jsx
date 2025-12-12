@@ -10,7 +10,7 @@ function Cart() {
     
     if(cartItems.length === 0) {
         return (
-            <div>
+            <div className="cart-empty">
                 <h2>Your Cart is Empty</h2>
                 <p>Time to go shopping!</p>
                 <Link to="/">Go to Products</Link>
@@ -19,23 +19,23 @@ function Cart() {
     }
 
     return (
-        <div>
+        <div className="cart-page">
             <h2>Your Shopping Cart</h2>
-            <div>
-                <div>
+            <div className="cart-layout">
+                <div className="cart-items-list">
                     {cartItems.map((item) => (
                         // Use unique key and pass item data via props
                         <CartItem key={item.id} item={item} />
                     ))}
                 </div>
-                <div>
+                <div className="cart-summary">
                     <h3>Order Summary</h3>
                     <p>Subtotal ({cartItems.length} items) : **${subtotal.toFixed(2)}**</p>
                     <p>Shipping: FREE</p>
                     <hr />
                     <h4>Total: ${subtotal.toFixed(2)}</h4>
 
-                    <Link to="/checkout">Proceed to Checkout</Link>
+                    <Link to="/checkout" className="checkout-btn">Proceed to Checkout</Link>
                 </div>
             </div>
         </div>
