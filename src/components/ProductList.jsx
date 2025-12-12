@@ -1,4 +1,5 @@
 import useFetchProducts from "../hooks/useFetchProducts";
+import ProductItem from "./ProductItem";
 
 const API_URL = 'https://dummyjson.com/products';
 
@@ -31,15 +32,14 @@ function ProductList() {
         )
     }
 
+    // Rendering the List
     return (
         <div>
             <h2>Featured Products</h2>
-            {/* Placeholder */}
             <div>
-                {products.slice(0, 4).map(product => (
-                    <div key={product.id}>
-                        <p>ID: {product.id} = **{product.title}**</p>
-                    </div>
+                {products.map((product) => (
+                    // use unique key and pass product data via props
+                    <ProductItem key={product.id} product={product} />
                 ))}
             </div>
         </div>
