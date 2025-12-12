@@ -170,20 +170,36 @@ button:disabled {
     align-items: center;
 }
 
+.logo-link {
+    text-decoration: none;
+}
+
+.logo-link:hover {
+    text-decoration: none;
+}
+
+.logo-icon {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    transition: opacity 0.2s;
+}
+
 .logo {
+    margin-top: 6px;
     font-size: 1.5rem;
     font-weight: bold;
     color: white;
     text-decoration: none;
-    transition: opacity 0.2s;
 }
 
-.logo:hover {
+.logo-icon:hover {
     opacity: 0.8;
 }
 
 .search-bar input {
-    min-width: 250px;
+    margin: 0;
+    min-width: 350px;
     background-color: #f1f1f1;
 }
 

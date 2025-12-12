@@ -19,8 +19,11 @@ function Header() {
         <header className="app-header">
             <nav className="header-nav">
                 {/* Link to Home */}
-                <Link to="/">
-                    <h1 className="logo">ShoppyGlobe</h1>
+                <Link to="/" className="logo-link">
+                    <div className="logo-icon">
+                        <img src="/src/assets/icons8-shop-48.png" alt="Shop Icon" />
+                        <h1 className="logo">ShoppyGlobe</h1>
+                    </div>
                 </Link>
                 <div className="search-bar">
                     <input 
