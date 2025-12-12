@@ -30,7 +30,7 @@ function Cart() {
                 </div>
                 <div className="cart-summary">
                     <h3>Order Summary</h3>
-                    <p>Subtotal ({cartItems.length} items) : **${subtotal.toFixed(2)}**</p>
+                    <p>Subtotal ({cartItems.length} items) : ${subtotal.toFixed(2)}</p>
                     <p>Shipping: FREE</p>
                     <hr />
                     <h4>Total: ${subtotal.toFixed(2)}</h4>

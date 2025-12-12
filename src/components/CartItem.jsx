@@ -34,7 +34,7 @@ function CartItem({ item }) {
                 </div>
             </div>
             <div className="item-total">
-                Total: **${lineTotal.toFixed(2)}**
+                Total : ${lineTotal.toFixed(2)}
             </div>
         </div>
     );
