@@ -22,10 +22,10 @@ function CartItem({ item }) {
 
     return (
         <div className="cart-item">
-            <img src={item.thumnail} alt={item.title} />
+            <img src={item.thumbnail} alt={item.title} />
             <div className="item-details">
                 <h4>{item.title}</h4>
-                <p>Unit Price: ${item.price.toFixed(2)}</p>
+                <p>Unit Price : ${item.price.toFixed(2)}</p>
                 <div className="quantity-controls">
                     <button onClick={handleDecrement} disabled={item.quantity === 1}>-</button>
                     <span>{item.quantity}</span>

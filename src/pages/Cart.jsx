@@ -31,11 +31,11 @@ function Cart() {
                 <div className="cart-summary">
                     <h3>Order Summary</h3>
                     <p>Subtotal ({cartItems.length} items) : ${subtotal.toFixed(2)}</p>
-                    <p>Shipping: FREE</p>
+                    <p>Shipping : FREE</p>
                     <hr />
-                    <h4>Total: ${subtotal.toFixed(2)}</h4>
+                    <h4>Total : ${subtotal.toFixed(2)}</h4>
 
-                    <Link to="/checkout" className="checkout-btn">Proceed to Checkout</Link>
+                    <Link to="/checkout" className="checkout-btn" role="button">Proceed to Checkout</Link>
                 </div>
             </div>
         </div>

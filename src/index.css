@@ -79,6 +79,23 @@ button:disabled {
     background-color: var(--secondary-color);
     width: 100%;
     margin-top: 10px;
+    padding: 12px 15px;
+    display: block;
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 6px;
+    text-decoration: none;
+}
+
+.checkout-btn {
+    color: white !important;
+}
+
+.checkout-btn:hover {
+    background-color: #1e7e34;
+    text-decoration: none;
+    color: white;
 }
 
 .add-to-cart-btn:hover, .place-order-btn:hover, .checkout-btn:hover {
@@ -130,7 +147,7 @@ button:disabled {
     border-radius: 8px;
 }
 
-.page-oading-falback {
+.page-loading-fallback {
     text-align: center;
     padding: 50px;
     color: var(--primary-color);
@@ -247,6 +264,9 @@ button:disabled {
 }
 
 .product-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     border: 1px solid var(--border-color);
     padding: 15px;
     background-color: white;
@@ -325,9 +345,54 @@ button:disabled {
 }
 
 .remove-btn {
-    background-color: var(--error-color);
+    background-color: var(--error-color) !important;
+    color: white !important;
     margin-left: 15px;
     width: auto !important;
+    padding: 8px 12px !important;
+    font-weight: normal;
+    font-size: 0.9rem;
+}
+
+.remove-btn:hover {
+    background-color: #bd2130 !important;
+}
+
+.summary-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px dashed var(--border-color);
+    font-size: 0.95rem;
+}
+
+.summary-item:last-of-type {
+    border-bottom: none;
+}
+
+.summary-totals {
+    margin-top: 15px;
+    padding: 15px;
+    border-top: 2px solid var(--border-color);
+}
+
+.summary-totals p {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    font-size: 1rem;
+}
+
+.summary-totals h4 {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    font-size: 1.5rem;
+    color: var(--error-color);
+}
+
+.summary-totals h4 span {
+    font-weight: bold;
 }
 
 /* Responsive adjustment for Cart/Checkout */
