@@ -1,17 +1,76 @@
-# React + Vite
+# ShoppyGlobe E Commerce Application (React + Vite)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a modern, responsive e-commerce web application built with React and Vite. It features a dynamic product catalog, detailed product views, a fully functional shopping cart managed by Redux, and a simulated checkout process.
 
-Currently, two official plugins are available:
+## Features
+* **Product Discovery:** Browse a wide range of products fetched from the DummyJSON API.
+* **Search & Filter:** Real-time product searching powered by Redux state.
+* **Dynamic Routing:** Detailed product pages using dynamic route parameters.
+* **Shopping Cart:** 
+    * Add/Remove items.
+    * Modify quantities (with a minimum limit of 1).
+    * Persistent state management via Redux.
+* **Checkout System:** A dummy checkout form with order summary and automatic cart clearing upon success.
+* **Performance Optimized:**
+    * **Code Splitting:** Components are loaded lazily using React.lazy andSuspence.
+    * **Image Lazy Loading:** Optimized asset loading for better UX.
+* **Error Handling:** Custom 404 "Not Found" page and graceful API error management.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## UI & UX
+* Fully responsive interface
+* Smooth transitions
 
-## React Compiler
+## Technologies Used
+* **Framework:** React v19+
+* **Bundler:** Vite
+* **Routing:** React Router
+* **State Management:** Redux Toolkit & React Redux
+* **Styling:** CSS3 (Responsive Design)
+* **API:** DummyJSON
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Getting Started
 
-## Expanding the ESLint configuration
+Follow these steps to set up and run the project locally.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-# ShoppyGlobe-E-Commerce-Application
+### Prerequisites
+
+You need to have **Node.js** and **npm** (Node Package Manager) installed on your machine.
+
+### Installation
+
+### Clone the Repository
+
+```bash
+git clone https://github.com/GuduruVinay/ShoppyGlobe-E-Commerce-Application.git
+```
+
+Or download the ZIP manually and extract it.
+
+### Install Dependencies
+
+Open the project folder in your terminal :
+
+```bash
+cd shoppyGlobe-e-commerce-application
+npm install
+```
+
+This installs React, Vite and required dependencies.
+
+### Run the Development Server
+
+```bash
+npm run dev
+```
+
+Then open the local server link shown in the terminal, for example :
+
+```bash
+http://localhost:5173/
+```
+
+The ShoppyGlobe E Commerce Application will now be running !
+
+## GitHub Link
+
+https://github.com/GuduruVinay/ShoppyGlobe-E-Commerce-Application
