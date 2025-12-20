@@ -51,7 +51,7 @@ Or download the ZIP manually and extract it.
 Open the project folder in your terminal :
 
 ```bash
-cd shoppyGlobe-e-commerce-application
+cd shoppyglobe-e-commerce-application
 npm install
 ```
 
