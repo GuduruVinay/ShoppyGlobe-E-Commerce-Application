@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../redux/cartSlice";
+import Toast from "../components/Toast";
 
 function ProductDetail() {
     // Get the dynamic ID from the URL
@@ -10,6 +11,18 @@ function ProductDetail() {
     const [product, setProduct] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+
+    const [toasts, setToasts] = useState([]);
+
+    const addToast = (message, type) => {
+        const id = Date.now();
+        setToasts((prev) => [...prev, { id, message, type }]);
+    };
+
+    const removeToast = (id) => {
+        setToasts((prev) => prev.filter((t) => t.id !== id));
+    }
+
 
     useEffect(() => {
         // Only fetch if productId is available
@@ -47,6 +60,7 @@ function ProductDetail() {
     const handleAddToCart = () => {
         if(product) {
             dispatch(addToCart(product));
+            addToast('Item successfully added to cart!', 'added');
         }
     }
 
@@ -72,18 +86,29 @@ function ProductDetail() {
     }
 
     return (
-        <div className="product-detail-page">
-            <div className="detail-content">
-                <img src={product.thumbnail} alt={product.title} className="detail-image" />
-                <div className="detail-info">
-                    <h2>{product.title}</h2>
-                    <p className="detail-description">{product.description}</p>
-                    <h3>Price : ${product.price}</h3>
-                    <p>Category : {product.category}</p>
-                    <button onClick={handleAddToCart} className="add-to-cart-btn">Add to Cart</button>
+        <>
+            <div className="container product-detail-page">
+                <div className="detail-content">
+                    <img src={product.thumbnail} alt={product.title} className="detail-image" />
+                    <div className="detail-info">
+                        <h2>{product.title}</h2>
+                        <h3 className="price">Price : ${product.price}</h3>
+                        <p className="detail-description">{product.description}</p>
+                        <p>Category : {product.category}</p>
+                        <button onClick={handleAddToCart} className="add-to-cart-btn">Add to Cart</button>
+                    </div>
                 </div>
             </div>
-        </div>
+            <div className="toast-container">
+                {toasts.map((toast) => (
+                    <Toast
+                        key={toast.id}
+                        {...toast}
+                        removeToast={removeToast} 
+                    />
+                ))}
+            </div>
+        </>
     );
 };
 

@@ -80,7 +80,6 @@ function Checkout() {
                             <p>${(item.price * item.quantity).toFixed(2)}</p>
                         </div>
                     ))}
-                    <hr />
                     <div className="summary-totals">
                         <p>Subtotal : <span>${subtotal.toFixed(2)}</span></p>
                         <p>Shipping : <span>FREE</span></p>

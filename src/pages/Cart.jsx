@@ -34,7 +34,6 @@ function Cart() {
                     <p>Shipping : FREE</p>
                     <hr />
                     <h4>Total : ${subtotal.toFixed(2)}</h4>
-
                     <Link to="/checkout" className="checkout-btn" role="button">Proceed to Checkout</Link>
                 </div>
             </div>

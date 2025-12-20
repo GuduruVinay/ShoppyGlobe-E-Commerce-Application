@@ -12,7 +12,7 @@ function NotFound() {
             {error && (
                 <div>
                     <p>
-                        **Error Detail :** *{error.statusText || error.message}*
+                        Error Detail : {error.statusText || error.message}
                     </p>
                 </div>
             )}
